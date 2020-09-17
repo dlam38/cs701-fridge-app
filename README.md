@@ -1,10 +1,10 @@
-## [insert project title here]
+## [Fridge Friend]
 ### Middlebury College, Computer Science CSCI 701 (Fall 2020)
 
 ### about
-TODO: a few sentences describing your project
+TODO: A fridge app to help you keep track of food expiring. 
 
-view our website [here]()
+view our website [here](https://dlam38.github.io/cs701-fridge-app/)
 
 ### building
 TODO: how can someone build your project, starting from the GitHub clone/download, installing dependencies and compiling.
