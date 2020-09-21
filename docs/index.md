@@ -1,10 +1,10 @@
-## [insert project title]
+## Friendly Fridge
 ### Middlebury College, Computer Science CSCI 701 (Fall 2020)
 
 See the [help](help.md) for resources on writing your project website.
 
 ### About our project
-TODO
+A food tracking app that will give you friendly reminders of food expiring in your fridge! Save money and prevent food waste! 
 
 See the README in our [project repository](https://github.com/philipclaude/project-website) for information on building and using our software.
 
