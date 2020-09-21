@@ -2,7 +2,7 @@
 ### Middlebury College, Computer Science CSCI 701 (Fall 2020)
 
 ### about
-TODO: A fridge app to help you keep track of food expiring. 
+TODO: A friendly and practical app to help you keep track of food expiring. Save money and prevent food waste! 
 
 view our website [here](https://dlam38.github.io/cs701-fridge-app/)
 
