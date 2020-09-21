@@ -1,4 +1,4 @@
-## [Fridge Friend]
+## Fridge Friend
 ### Middlebury College, Computer Science CSCI 701 (Fall 2020)
 
 ### about
