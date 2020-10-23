@@ -18,10 +18,16 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="157dp"
-        android:layout_height="35dp"
+        android:layout_width="352dp"
+        android:layout_height="104dp"
         android:text="Welcome to Food Friend!"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="256dp" />
+        android:textSize="30dp"
+        android:textColor="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.728"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.357" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
