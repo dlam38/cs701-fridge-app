@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         actionBar!!.title = "Fridge Friend"
 
         createListBtn.setOnClickListener{
-            val intent = Intent(this, ListActivity::class.java)
+            val intent = Intent(this, CreateList::class.java)
             startActivity(intent)
         }
 
