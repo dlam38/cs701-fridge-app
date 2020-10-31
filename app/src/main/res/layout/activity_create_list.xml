@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CreateList"
-    android:background="#4CAF50">
+    android:background="#F9FBF9">
 
     <TextView
         android:id="@+id/textView"
@@ -19,60 +19,88 @@
         app:fontFamily="amaranth" />
 
     <EditText
-        android:layout_below="@id/textView"
         android:id="@+id/editText"
-        android:padding="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="1dp"
         android:hint="Add an Item"
-        android:textColorHint="#736A6A"
-        android:textColor="#000000"/>
-    <LinearLayout
+        android:padding="20dp"
+        android:textColor="#000000"
+        android:textColorHint="#736A6A" />
+
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="60dp"
+        android:hint="Add Quantity"
+        android:padding="20dp"
+        android:textColor="#9C27B0"
+        android:textColorHint="#736A6A" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="125dp"
+        android:hint="Expiration Date"
+        android:padding="20dp"
+        android:textColor="#9C27B0"
+        android:textColorHint="#736A6A" />
+
+    <LinearLayout
         android:id="@+id/linearLayout1"
-        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/editText"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
         android:padding="10dp">
+
         <Button
             android:id="@+id/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add"/>
+            android:text="Add" />
+
         <Button
             android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete"
-            android:layout_marginLeft="70dp"/>
+            android:layout_marginLeft="70dp"
+            android:text="Delete" />
+
         <Button
             android:id="@+id/clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear"
-            android:layout_marginLeft="60dp"/>
+            android:layout_marginLeft="60dp"
+            android:text="Clear" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout1"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:padding="10dp"
-        android:layout_below="@id/linearLayout1"
         android:text="My Food List"
-        android:textSize="41dp"
         android:textColor="#AAABB3"
-        app:fontFamily="amaranth"/>
+        android:textSize="41dp"
+        app:fontFamily="amaranth" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_below="@id/textView1"
-        android:choiceMode="multipleChoice"/>
-
-
+        android:layout_marginTop="0dp"
+        android:choiceMode="multipleChoice" />
 
 
 </RelativeLayout>
