@@ -17,16 +17,44 @@ class CreateList : AppCompatActivity() {
         actionBar.setDisplayHomeAsUpEnabled(true)
 
         // Initializing the array lists and the adapter
-        var itemlist = arrayListOf<String>()
-        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, itemlist)
+
+        //var itemlist = arrayListOf<String>() //old
+
+        //NEW: initializing 2d- arraylist
+        var newItemList = arrayListOf<ArrayList<String>>()
+
+        //initializing adapter
+        // NEW: now w/ newItemlist
+        var adapter = ArrayAdapter<ArrayList<String>>(this, android.R.layout.simple_list_item_multiple_choice, newItemList)
 
         // Adding the items to the list when the add button is pressed
         add.setOnClickListener {
-            itemlist.add(editText.text.toString())
+
+            //itemlist.add(food.text.toString()) //old
+
+            //NEW: arrayList of strings called tempItem
+            var tempItem = arrayListOf<String>()
+            tempItem.add(food.text.toString())
+            tempItem.add(quantity.text.toString())
+            tempItem.add(expiration.text.toString())
+
+            //OLD:
+            //itemlist.add(food)
+
+
+            //NEW:
+            newItemList.add(tempItem)
+
+
             listView.adapter =  adapter
+                    //Notifies the attached observers that the underlying data has been changed
+                    //  and any View reflecting the data set should refresh itself.
             adapter.notifyDataSetChanged()
-            // This is because every time when you add the item the input      space or the eidt text space will be cleared
-            editText.text.clear()
+            // This is because every time when you add the item the edit text space will be cleared
+            //and go back to the place holder default
+            food.text.clear()
+            quantity.text.clear()
+            expiration.text.clear()
         }
 
 
@@ -38,7 +66,7 @@ class CreateList : AppCompatActivity() {
             while (item >= 0) {
                 if (position.get(item))
                 {
-                    adapter.remove(itemlist.get(item))
+                    adapter.remove(newItemList.get(item))
                 }
                 item--
             }
@@ -51,7 +79,7 @@ class CreateList : AppCompatActivity() {
         // Clearing all the items in the list when the clear button is pressed
         clear.setOnClickListener {
 
-            itemlist.clear()
+            newItemList.clear()
             adapter.notifyDataSetChanged()
 
         }
@@ -60,7 +88,7 @@ class CreateList : AppCompatActivity() {
 
         // Adding the toast message to the list when an item on the list is pressed
         listView.setOnItemClickListener { adapterView, view, i, l ->
-            android.widget.Toast.makeText(this, "You Selected the item --> "+itemlist.get(i), android.widget.Toast.LENGTH_SHORT).show()
+            android.widget.Toast.makeText(this, "You Selected the item --> "+newItemList.get(i), android.widget.Toast.LENGTH_SHORT).show()
         }
 
 
