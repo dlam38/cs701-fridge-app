@@ -96,6 +96,8 @@
 
         <TextView
             android:id="@+id/foodTitle"
+            android:textStyle="bold"
+            android:textSize="25dp"
             android:padding="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,12 +106,16 @@
 
         <TextView
             android:id="@+id/quantityTitle"
+            android:textStyle="bold"
+            android:textSize="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="33"
             android:text="Quantity" />
         <TextView
             android:id="@+id/expirationTitle"
+            android:textStyle="bold"
+            android:textSize="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="33"

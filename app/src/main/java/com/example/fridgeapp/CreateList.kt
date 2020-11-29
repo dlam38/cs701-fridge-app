@@ -21,11 +21,14 @@ class CreateList : AppCompatActivity() {
         //var itemlist = arrayListOf<String>() //old
 
         //NEW: initializing 2d- arraylist
-        var newItemList = arrayListOf<ArrayList<String>>()
+        //var newItemList = arrayListOf<ArrayList<String>>()
+
+        var newItemList = arrayListOf<String>()
 
         //initializing adapter
         // NEW: now w/ newItemlist
-        var adapter = ArrayAdapter<ArrayList<String>>(this, android.R.layout.simple_list_item_multiple_choice, newItemList)
+        //ArrayAdapter<ArrayList<String>>(this, android.R.layout.select_dialog_multichoice, newItemList)
+        var adapter = ArrayAdapter<String>(this, android.R.layout.select_dialog_multichoice, newItemList)
 
         // Adding the items to the list when the add button is pressed
         add.setOnClickListener {
@@ -33,17 +36,19 @@ class CreateList : AppCompatActivity() {
             //itemlist.add(food.text.toString()) //old
 
             //NEW: arrayList of strings called tempItem
-            var tempItem = arrayListOf<String>()
-            tempItem.add(food.text.toString())
-            tempItem.add(quantity.text.toString())
-            tempItem.add(expiration.text.toString())
+            //var tempItem = arrayListOf<String>()
+            //tempItem.add(food.text.toString())
+            //tempItem.add(quantity.text.toString())
+            //tempItem.add(expiration.text.toString())
 
             //OLD:
             //itemlist.add(food)
 
 
-            //NEW:
-            newItemList.add(tempItem)
+            //              tempItem
+
+            var tempString = food.text.toString() + "            " + quantity.text.toString() + "                 "  + expiration.text.toString()
+            newItemList.add(tempString)
 
 
             listView.adapter =  adapter
