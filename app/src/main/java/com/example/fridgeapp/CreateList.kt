@@ -7,6 +7,14 @@ import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_create_list.*
 
 class CreateList : AppCompatActivity() {
+
+    //NEW: initializing 2d- arraylist
+    //var newItemList = arrayListOf<ArrayList<String>>()
+    var newItemList = arrayListOf<String>()
+
+    lateinit var tempString: String
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_list)
@@ -19,11 +27,6 @@ class CreateList : AppCompatActivity() {
         // Initializing the array lists and the adapter
 
         //var itemlist = arrayListOf<String>() //old
-
-        //NEW: initializing 2d- arraylist
-        //var newItemList = arrayListOf<ArrayList<String>>()
-
-        var newItemList = arrayListOf<String>()
 
         //initializing adapter
         // NEW: now w/ newItemlist
@@ -47,7 +50,7 @@ class CreateList : AppCompatActivity() {
 
             //              tempItem
 
-            var tempString = food.text.toString() + "            " + quantity.text.toString() + "                 "  + expiration.text.toString()
+            tempString = food.text.toString() + "            " + quantity.text.toString() + "                 "  + expiration.text.toString()
             newItemList.add(tempString)
 
 
@@ -89,16 +92,30 @@ class CreateList : AppCompatActivity() {
 
         }
 
-
-
         // Adding the toast message to the list when an item on the list is pressed
         listView.setOnItemClickListener { adapterView, view, i, l ->
             android.widget.Toast.makeText(this, "You Selected the item --> "+newItemList.get(i), android.widget.Toast.LENGTH_SHORT).show()
         }
 
 
+        if(savedInstanceState != null) {
+            var savedTempString = savedInstanceState.getString(tempString)
+            newItemList.add(tempString)
+        }
 
 
 
     }
+
+    private fun Bundle.putStringArrayList(toString: String) {
+        newItemList.toString()
+    }
+
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        savedInstanceState.putStringArrayList(newItemList.toString())
+        super.onSaveInstanceState(savedInstanceState)
+    }
+
+
 }
+
