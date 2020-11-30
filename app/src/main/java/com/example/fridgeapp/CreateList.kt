@@ -27,7 +27,7 @@ class CreateList : AppCompatActivity() {
 
 
         //This adapter will bridge our array list data structure with the listview UI
-        var adapter = ArrayAdapter<String>(this, android.R.layout.select_dialog_multichoice, newItemList)
+        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_activated_1, newItemList)
 
         // Adding the items to the list when the add button is pressed
         add.setOnClickListener {
