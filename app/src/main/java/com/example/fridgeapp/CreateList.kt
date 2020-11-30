@@ -4,14 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.SparseBooleanArray
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_create_list.*
 
 class CreateList : AppCompatActivity() {
 
-    //NEW: initializing 2d- arraylist
-    //var newItemList = arrayListOf<ArrayList<String>>()
+    //Initializing our array list data structure for storing our food item entries
     var newItemList = arrayListOf<String>()
 
+    //Initializing a temp string variable which will be used to add a new entry to newItemList
     lateinit var tempString: String
 
 
@@ -24,42 +25,24 @@ class CreateList : AppCompatActivity() {
         actionBar!!.title = "Fridge Friend"
         actionBar.setDisplayHomeAsUpEnabled(true)
 
-        // Initializing the array lists and the adapter
 
-        //var itemlist = arrayListOf<String>() //old
-
-        //initializing adapter
-        // NEW: now w/ newItemlist
-        //ArrayAdapter<ArrayList<String>>(this, android.R.layout.select_dialog_multichoice, newItemList)
+        //This adapter will bridge our array list data structure with the listview UI
         var adapter = ArrayAdapter<String>(this, android.R.layout.select_dialog_multichoice, newItemList)
 
         // Adding the items to the list when the add button is pressed
         add.setOnClickListener {
 
-            //itemlist.add(food.text.toString()) //old
-
-            //NEW: arrayList of strings called tempItem
-            //var tempItem = arrayListOf<String>()
-            //tempItem.add(food.text.toString())
-            //tempItem.add(quantity.text.toString())
-            //tempItem.add(expiration.text.toString())
-
-            //OLD:
-            //itemlist.add(food)
-
-
-            //              tempItem
-
+            //Stores the user input in tempString variable and adds tempString to newItemList
             tempString = food.text.toString() + "            " + quantity.text.toString() + "                 "  + expiration.text.toString()
             newItemList.add(tempString)
 
-
+            //Connect our adapter to the listview
             listView.adapter =  adapter
-                    //Notifies the attached observers that the underlying data has been changed
-                    //  and any View reflecting the data set should refresh itself.
+
+            //Notifies the attached observers that the underlying data has been changed and any View reflecting the data set should refresh itself.
             adapter.notifyDataSetChanged()
-            // This is because every time when you add the item the edit text space will be cleared
-            //and go back to the place holder default
+
+            // This is because every time when you add the item the edit text space will be cleared and go back to the place holder default
             food.text.clear()
             quantity.text.clear()
             expiration.text.clear()
@@ -96,26 +79,6 @@ class CreateList : AppCompatActivity() {
         listView.setOnItemClickListener { adapterView, view, i, l ->
             android.widget.Toast.makeText(this, "You Selected the item --> "+newItemList.get(i), android.widget.Toast.LENGTH_SHORT).show()
         }
-
-
-        if(savedInstanceState != null) {
-            var savedTempString = savedInstanceState.getString(tempString)
-            newItemList.add(tempString)
-        }
-
-
-
     }
-
-    private fun Bundle.putStringArrayList(toString: String) {
-        newItemList.toString()
-    }
-
-    override fun onSaveInstanceState(savedInstanceState: Bundle) {
-        savedInstanceState.putStringArrayList(newItemList.toString())
-        super.onSaveInstanceState(savedInstanceState)
-    }
-
-
 }
 

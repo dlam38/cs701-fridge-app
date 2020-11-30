@@ -18,25 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         actionBar!!.title = "Fridge Friend"
 
+        //When the start button is clicked, the app moves on to the list activity
         createListBtn.setOnClickListener{
             val intent = Intent(this, CreateList::class.java)
             startActivity(intent)
         }
-
-        /*
-
-        val listView = findViewById<ListView>(R.id.listView)
-        var foodList = ArrayList<String>()
-
-        foodList.add("Avocado")
-        foodList.add("Orange Juice")
-        foodList.add("Bread")
-
-        var foodArrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,foodList)
-
-        listView.adapter = foodArrayAdapter
-
-         */
-
     }
 }
