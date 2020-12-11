@@ -18,7 +18,7 @@ view our website [here](https://dlam38.github.io/cs701-fridge-app/)
 3. Start recording your prepacked foods!
 
 ### limitations
-User cannot edit a listing. In order to change the quanitity or expiration date, must create a new listing and delete the old one. 
+User cannot edit a listing. In order to change the quanitity or expiration date, user must create a new listing and delete the old one. 
 
 ### references
 To learn more about app that helps reduce food waste visit:
