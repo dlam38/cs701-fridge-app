@@ -7,7 +7,7 @@ TODO: A friendly and practical app to help you keep track of food expiring. Save
 view our website [here](https://dlam38.github.io/cs701-fridge-app/)
 
 ### building
-1. Install Android Studio. 
+1. Install Android Studio. Documantion can be found her: https://developer.android.com/studio/install
 2. Install emulator on android studio. Documentation can be found here: https://developer.android.com/studio/run/emulator. 
 3. Download repo.
 4. Open in Android studio and hit run. 
@@ -22,5 +22,5 @@ User cannot edit a listing. In order to change the quanitity or expiration date,
 
 ### references
 To learn more about app that helps reduce food waste visit:
-https://olioex.com/
+https://olioex.com/ or 
 https://www.gomkt.com/
