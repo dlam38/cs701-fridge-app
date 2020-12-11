@@ -7,13 +7,20 @@ TODO: A friendly and practical app to help you keep track of food expiring. Save
 view our website [here](https://dlam38.github.io/cs701-fridge-app/)
 
 ### building
-TODO: how can someone build your project, starting from the GitHub clone/download, installing dependencies and compiling.
+1. Install Android Studio. 
+2. Install emulator on android studio. Documentation can be found here: https://developer.android.com/studio/run/emulator. 
+3. Download repo.
+4. Open in Android studio and hit run. 
 
 ### usage
-TODO: provide examples on how to use your program
+1. Click the Fridge Friend App
+2. Click start on landing page
+3. Start recording your prepacked foods!
 
 ### limitations
-TODO: what are some known limitations users should be aware of when running your program?
+User cannot edit a listing. In order to change the quanitity or expiration date, must create a new listing and delete the old one. 
 
 ### references
-TODO: what are some important resources for those who want to look further (papers that influenced your work + your final report)
+To learn more about app that helps reduce food waste visit:
+https://olioex.com/
+https://www.gomkt.com/
